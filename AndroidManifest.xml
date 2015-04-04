@@ -8,6 +8,11 @@
         android:minSdkVersion="19"
         android:targetSdkVersion="19" />
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-feature android:name="android.hardware.nfc.hce" android:required="true" />
+    
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -15,13 +20,30 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <service android:name="com.breakpoint.americano.app.nfc.NfcTagService" android:exported="true"
+            android:permission="android.permission.BIND_NFC_SERVICE">
+            <intent-filter>
+                <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+            </intent-filter>
+            
+            <!-- <meta-data android:name="android.nfc.cardemulation.host_apdu_service" android:resource="@xml/aid_list" /> -->
+        </service>
+        
+        <receiver android:name="com.breakpoint.americano.app.nfc.NfcTagAdapter" android:exported="false">
+            <intent-filter>
+                <action android:name="com.breakpoint.americano.app.nfc.test" />
+            </intent-filter>
+       </receiver>
     </application>
 
 </manifest>
