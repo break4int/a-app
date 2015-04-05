@@ -5,15 +5,15 @@ import android.util.Log;
 public class NfcDataModel {
 
 	private static final String	TAG	= NfcDataModel.class.getSimpleName();
-	private int					mNumber;
+	private int					number;
 
-	public int getmNumber() {
-		return mNumber;
+	public int getNumber() {
+		return number;
 	}
 
-	public void setmNumber(int mNumber) {
-		Log.i(TAG, "setNumber " + this.mNumber + " -> " + mNumber);
-		this.mNumber = mNumber;
+	public void setNumber(int number) {
+		Log.i(TAG, "setNumber " + this.number + " -> " + number);
+		this.number = number;
 	}
 
 }

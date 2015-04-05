@@ -36,7 +36,7 @@ public class NfcTagAdapter extends BroadcastReceiver {
 
 			if (mNfcTagAdapter != null) {
 
-				mNfcTagAdapter.mNfcDataModel.setmNumber(ret);
+				mNfcTagAdapter.mNfcDataModel.setNumber(ret);
 				mNfcTagAdapter.mHandler.sendEmptyMessage(ret);
 			}
 		}
