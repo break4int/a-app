@@ -36,7 +36,7 @@
                 <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
             </intent-filter>
             
-            <!-- <meta-data android:name="android.nfc.cardemulation.host_apdu_service" android:resource="@xml/aid_list" /> -->
+            <meta-data android:name="android.nfc.cardemulation.host_apdu_service" android:resource="@xml/aid_list" />
         </service>
         
         <receiver android:name="com.breakpoint.americano.app.nfc.NfcTagAdapter" android:exported="false">
