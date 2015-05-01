@@ -49,6 +49,12 @@ public class MainActivity extends Activity {
 		settings.setAllowContentAccess(true);
 		settings.setDomStorageEnabled(true);
 
+		settings.setCacheMode(WebSettings.LOAD_DEFAULT);
+		String appCachePath = getApplicationContext().getCacheDir().getAbsolutePath();
+		Log.d("MainActivity", appCachePath);
+		settings.setAppCachePath(appCachePath);
+		settings.setAppCacheEnabled(true);
+
 		mNfcHandler = new NfcHandler(this);
 		mNfcTagAdapter = new NfcTagAdapter(mNfcHandler);
 
